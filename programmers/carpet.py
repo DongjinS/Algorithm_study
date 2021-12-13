@@ -1,5 +1,4 @@
 def solution(brown, yellow):
-    from itertools import combinations
     mul_ans = brown + yellow
     a = yellow
     answer = []
