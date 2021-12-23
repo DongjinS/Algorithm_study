@@ -16,6 +16,7 @@ def solution(n, times):
         
         if possible_num < n:
             lp = middle+1
+        # 검사할 사람보다 더 많이 볼 수 있으면 일단 후보에 넣기
         elif possible_num >= n:
             rp = middle-1
             candidiate_ans.append(middle)
@@ -58,6 +59,7 @@ def solution_h(n, times):
         
         if possible_num < n:
             lp = middle+1
+        # 검사할 사람보다 더 많이 볼 수 있으면 일단 후보에 넣기
         elif possible_num >= n:
             rp = middle-1
             heappush(candidiate_ans, middle)
