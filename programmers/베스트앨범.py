@@ -15,13 +15,18 @@ def solution(genres, plays):
     
     sorted_genre = list(hashTable.values())
     sorted_genre.sort(key=lambda x:x[-1], reverse=True)
-    print(sorted_genre)
+    
 
     for genre in sorted_genre:
       genre = genre[:-1]
+      cnt = 0
       for song in genre:
-        answer.append(10001 - song[1])
-    print(answer)
+        if cnt < 2:
+          answer.append(10001 - song[1])
+        else:
+          break
+        cnt+=1
+    
     return answer
 
 solution(["classic", "pop", "classic", "classic", "pop"],	[500, 600, 150, 800, 2500])
