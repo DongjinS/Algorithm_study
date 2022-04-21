@@ -1,0 +1,3 @@
+SELECT DATETIME from ANIMAL_INS
+Order by DATETIME
+limit 1
