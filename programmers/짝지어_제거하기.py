@@ -1,31 +1,33 @@
 def solution(s):
-    from collections import deque
     answer = -1
     s = list(s)
-    # dq = deque(s)
     container = []
     cnt = 0
-    flag = False
+    n = len(s)
     while s:
-        n = len(s)
         cnt += 1
-        if n>1 and s[-1] == s[-2]:
+        if len(s)>1 and s[-1] == s[-2]:
             s.pop()
             s.pop()
         else:
             container.append(s.pop())
+            if len(container)>1 and container[-1] == container[-2]:
+                container.pop()
+                container.pop()
             
         if not s:
-            s = container
-            if n != len(container):
-                flag  = True
-            cnt = 0
-        
-        if cnt == n and flag == False:
-            answer = 0
-            break
+            if n == len(container):
+                answer = 0
+                break
+            else:
+                s = list(container)
+                container = []
+                n = len(s)
+                cnt = 0
     
     if answer == -1:
         answer = 1
     
     return answer
+
+solution("baabaa")
